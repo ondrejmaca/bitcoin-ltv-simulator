@@ -12,7 +12,7 @@ A specialized technical tool designed to visualize loan health and liquidation r
 - **Margin Call System:** Tracks the three critical threshold levels (MC1, MC2, MC3) defined in the [Official Firefish documentation](https://docs.firefish.io/faq/borrowing/collateral#what-is-a-margin-call).
 
 - **Loan Detail & Liquidation:** Click any loan row to open a detail panel. Loans in Critical status reveal a *Request Liquidation* button that triggers a GraphQL mutation and immediately updates the loan status.
-- **Mock GraphQL Backend:** „Apollo Client is integrated with an in-process GraphQL executor — eliminating the need for a live backend while maintaining a full query/mutation architecture for a seamless transition to a live production API.
+- **Mock GraphQL Backend:** Apollo Client is integrated with an in-process GraphQL executor — eliminating the need for a live backend while maintaining a full query/mutation architecture for a seamless transition to a live production API.
 - **Tech Stack:** TypeScript · React 19 · Apollo Client · Recharts · Vite · Docker
 
 ## 🚦 Health Status & Margin Calls
@@ -20,10 +20,10 @@ The simulator categorizes loan safety into distinct zones. The transition points
 
 | Status | LTV Range | CHI Range | Margin Call Level |
 | :--- | :--- | :--- | :--- |
-| 🟢 **Healthy** | $LTV < 73\%$ | $100\% - 33\%$ | None |
-| 🟡 **Warning** | $73\% \le LTV < 86\%$ | $33\% - 12\%$ | MC1 (73%) · MC2 (79%) |
-| 🔴 **Critical** | $86\% \le LTV < 95\%$ | $12\% - 1\%$ | MC3 (86%) |
-| 🟣 **Liquidated** | $LTV \ge 95\%$ | $0\%$ | Collateral Liquidated |
+| 🟢 **Healthy** | LTV < 73% | 100% - 33% | None |
+| 🟡 **Warning** | 73% ≤ LTV < 86% | 33% - 12% | MC1 (73%) · MC2 (79%) |
+| 🔴 **Critical** | 86% ≤ LTV < 95% | 12% - 1% | MC3 (86%) |
+| 🟣 **Liquidated** | LTV ≥ 95% | 0% | Collateral Liquidated |
 
 ## 🧮 Technical Implementation
 
