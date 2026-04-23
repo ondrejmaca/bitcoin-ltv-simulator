@@ -1,0 +1,585 @@
+/* ── App ──────────────────────────────────────────────────── */
+
+.app {
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  max-width: 68.75rem;
+  margin: 0 auto;
+}
+
+.app__header {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin-bottom: 2rem;
+}
+
+.app__logo {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.app__brand {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--warning);
+  letter-spacing: 0.02em;
+}
+
+/* ── Dashboard ────────────────────────────────────────────── */
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dashboard__top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.dashboard__title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-bright);
+}
+
+.dashboard__subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.dashboard__top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.dashboard__total-loans {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dashboard__total-loans-label {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.dashboard__total-loans-value {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #60a5fa;
+  font-family: var(--font-mono, monospace);
+}
+
+.dashboard__chart-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.dashboard__legend {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
+}
+
+.dashboard__legend-title {
+  margin: 0 0 0.75rem;
+  font-size: 0.875rem;
+  color: var(--text-subtle);
+  font-weight: 600;
+}
+
+.dashboard__legend-item {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.875rem;
+  align-items: flex-start;
+}
+
+.dashboard__legend-dot {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.dashboard__legend-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.dashboard__legend-range {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.dashboard__legend-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.125rem;
+}
+
+.dashboard__error {
+  color: var(--critical);
+  padding: 2rem;
+}
+
+.dashboard__footer {
+  font-size: 0.6875rem;
+  color: var(--border-strong);
+  text-align: center;
+  margin: 0;
+}
+
+/* ── BTC Ticker ───────────────────────────────────────────── */
+
+.btc-ticker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btc-ticker__label {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.btc-ticker__price {
+  font-size: 1.375rem;
+  font-weight: 700;
+  font-family: var(--font-mono, monospace);
+  transition: color 0.4s;
+}
+
+.btc-ticker__price--loading {
+  color: var(--border-strong);
+}
+
+.btc-ticker__icon-slot {
+  width: 1.125rem;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Summary Cards ────────────────────────────────────────── */
+
+.summary-cards {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.summary-card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-width: 10rem;
+  border: 1px solid transparent;
+}
+
+.summary-card__label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.summary-card__value {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-bright);
+}
+
+/* ── LTV Bar ──────────────────────────────────────────────── */
+
+.ltv-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.ltv-bar__track {
+  flex: 1;
+  height: 0.5rem;
+  background: var(--surface-hover);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.ltv-bar__fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s ease, background 0.4s;
+}
+
+.ltv-bar__label {
+  width: 3rem;
+  text-align: right;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8125rem;
+}
+
+/* ── Status Badge ─────────────────────────────────────────── */
+
+.status-badge {
+  padding: 0.1875rem 0.625rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.status-badge--healthy    { background: #14532d; color: #86efac; }
+.status-badge--warning    { background: #713f12; color: #fde047; }
+.status-badge--critical   { background: #7f1d1d; color: #fca5a5; }
+.status-badge--liquidated { background: #1e1b4b; color: #a5b4fc; }
+
+/* ── LTV Chart ────────────────────────────────────────────── */
+
+.ltv-chart {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
+}
+
+.ltv-chart__title {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  color: var(--text-subtle);
+  font-weight: 600;
+}
+
+/* ── Glossary Banner ──────────────────────────────────────── */
+
+.glossary-banner {
+  display: flex;
+  gap: 1.5rem;
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  flex-wrap: wrap;
+}
+
+.glossary-banner__item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+  flex: 1;
+  min-width: 16rem;
+}
+
+.glossary-banner__term {
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-mono, monospace);
+  color: var(--text-bright);
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
+.glossary-banner__sep {
+  color: var(--border-strong);
+  flex-shrink: 0;
+}
+
+.glossary-banner__def {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.glossary-banner__def strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.glossary-banner__def em {
+  font-style: normal;
+  color: var(--warning);
+  font-family: var(--font-mono, monospace);
+}
+
+.glossary-banner__divider {
+  width: 1px;
+  background: var(--border);
+  align-self: stretch;
+}
+
+@media (max-width: 48rem) {
+  .glossary-banner__divider { display: none; }
+}
+
+/* ── Loan Table ───────────────────────────────────────────── */
+
+.loan-table {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.loan-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.loan-table__th {
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-strong);
+  text-align: left;
+}
+
+.loan-table__th--right {
+  text-align: right;
+}
+
+.loan-table__td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--text);
+}
+
+.loan-table__td--right {
+  text-align: right;
+  font-family: var(--font-mono, monospace);
+}
+
+.loan-table__td--muted {
+  text-align: right;
+  font-family: var(--font-mono, monospace);
+  color: var(--text-subtle);
+}
+
+.loan-table__td--wide {
+  min-width: 10rem;
+}
+
+.loan-table__row {
+  background: var(--surface);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.loan-table__row:hover {
+  background: var(--surface-hover);
+}
+
+.loan-table__borrower {
+  font-family: var(--font-mono, monospace);
+  color: var(--text-bright);
+}
+
+/* ── Skeleton ─────────────────────────────────────────────── */
+
+.skeleton {
+  background: linear-gradient(90deg, var(--surface-hover) 25%, var(--border-strong) 50%, var(--surface-hover) 75%);
+  background-size: 50rem 100%;
+  animation: shimmer 1.4s infinite linear;
+  border-radius: 6px;
+}
+
+.skeleton-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.skeleton-card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skeleton-table {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.skeleton-table__header {
+  background: var(--surface);
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-strong);
+  display: flex;
+  gap: 1.5rem;
+}
+
+.skeleton-table__row {
+  background: var(--surface);
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.skeleton-chart-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.skeleton-chart-card {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skeleton-legend-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.125rem;
+  align-items: flex-start;
+}
+
+.skeleton-legend-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+/* ── Loan Detail ──────────────────────────────────────────── */
+
+.loan-detail {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.loan-detail__panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 26.25rem;
+  max-width: 90vw;
+}
+
+.loan-detail__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.loan-detail__title {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-bright);
+}
+
+.loan-detail__close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
+.loan-detail__close:hover {
+  color: var(--text);
+}
+
+.loan-detail__loading {
+  color: var(--text-muted);
+}
+
+.loan-detail__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.loan-detail__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loan-detail__row-label {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.loan-detail__row-value {
+  font-size: 0.875rem;
+  color: var(--text);
+}
+
+.loan-detail__ltv-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.375rem;
+}
+
+.loan-detail__borrower {
+  font-family: var(--font-mono, monospace);
+}
+
+.loan-detail__liquidate-btn {
+  margin-top: 1.75rem;
+  width: 100%;
+  padding: 0.75rem 0;
+  background: var(--critical);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.loan-detail__liquidate-btn:disabled {
+  background: #7f1d1d;
+  cursor: not-allowed;
+}
+
+.loan-detail__liquidated-note {
+  margin-top: 1.75rem;
+  padding: 0.75rem 0;
+  text-align: center;
+  color: var(--text-subtle);
+  font-size: 0.8125rem;
+  border-top: 1px solid var(--border);
+}
