@@ -9,7 +9,7 @@ A specialized technical tool designed to visualize loan health and liquidation r
 ## 🚀 Key Features
 - **Live BTC Price:** Fetches the current Bitcoin price from the Binance public API every 5 minutes and recalculates LTV and CHI for all loans in real time.
 - **Real-time CHI Calculation:** Implements a non-linear hyperbolic model to reflect risk acceleration as LTV increases.
-- **Margin Call System:** Tracks the three critical threshold levels (MC1, MC2, MC3) defined in the [Official Firefish documentation](https://docs.firefish.io/faq/borrowing/collateral#what-is-a-collateral-health-indicator-chi).
+- **Margin Call System:** Tracks the three critical threshold levels (MC1, MC2, MC3) defined in the [Official Firefish documentation](https://docs.firefish.io/faq/borrowing/collateral#what-is-a-margin-call).
 
 - **Loan Detail & Liquidation:** Click any loan row to open a detail panel. Loans in Critical status reveal a *Request Liquidation* button that triggers a GraphQL mutation and immediately updates the loan status.
 - **Mock GraphQL Backend:** „Apollo Client is integrated with an in-process GraphQL executor — eliminating the need for a live backend while maintaining a full query/mutation architecture for a seamless transition to a live production API.
