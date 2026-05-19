@@ -72,4 +72,3 @@ npm test
    # The app will be running at:
    http://localhost:5174
    ```
-   [👉 Click here to open the app](http://localhost:5174)
