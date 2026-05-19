@@ -2,6 +2,8 @@
 
 A specialized technical tool designed to visualize loan health and liquidation risks for Bitcoin-backed lending. This project implements a **Collateral Health Indicator (CHI)** model inspired by the official Firefish documentation to demonstrate how debt dynamics work in volatile markets.
 
+🌐 **Live demo:** [bitcoin-ltv-simulator.vercel.app](https://bitcoin-ltv-simulator.vercel.app/)
+
 ## 📱 Preview
 ![App Screenshot](./public/app-screenshot.png)
 *Interactive UI showing real-time CHI calculation and risk levels.*
